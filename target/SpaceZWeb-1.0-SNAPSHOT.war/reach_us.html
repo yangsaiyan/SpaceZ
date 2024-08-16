@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SpaceZ - Reach Us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 0;
+            background-image: url(reach_us_background1.jpg);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .nav-container {
+            margin: auto;
+            text-align: center;
+            position: fixed;
+            top: 3vh;
+            border-radius: 200px;
+            width: fit-content;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: rgba(255, 255, 255, 0.5);
+            animation: fade-in 2s ease;
+        }
+
+        @keyframes fade-in {
+            from {
+                transform: translateY(-150%);
+            }
+
+            to {
+                transform: translateY(0%);
+            }
+        }
+
+        @keyframes form {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            padding-right: 50px;
+            font-size: 180%;
+            color: rgb(0, 0, 0);
+            font-family: serif;
+            transition: font-size 1s;
+        }
+
+        a:hover {
+            color: black;
+            font-size: 240%;
+            text-shadow: 0px 0px 10px white;
+        }
+
+        .container {
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: 30vh;
+
+        }
+
+        .container>h2 {
+            color: black;
+            background-color: rgb(255, 255, 255, 0.3);
+            border: 3px white solid;
+            padding: 6px;
+            width: fit-content;
+            margin: auto;
+        }
+
+        .container>h2:hover {
+            background-color: lightgrey;
+        }
+
+        .container>h1 {
+            background-color: rgba(255, 255, 255, 0.1);
+            margin-top: 60px;
+            margin-left: auto;
+            margin-right: auto;
+            color: black;
+            height: fit-content;
+            width: fit-content;
+        }
+
+        .container>h1+a {
+            position: relative;
+            left: 30px;
+        }
+
+        .form-container {
+            position: absolute;
+            background-color: rgba(255, 255, 255);
+            border-radius: 10px;
+            height: 88vh;   
+            width: 60vw;
+            top: 12vh;
+            left: 25vw;
+            display: none;
+            animation: form 1s ease;
+            border: 1px solid red;
+        }
+
+        .form {
+            padding: 20px;
+            justify-content: center;
+        }
+
+        #btn-form{
+            cursor: pointer;
+        }
+
+        .btn{
+            position: relative;
+            top: 40px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="nav-container">
+        <a href="index.html"><img src="SpaceZ-Logo.png" width="200" height="50"></a>
+        <a href="index.html"><b>Home</b></a>
+        <a href="launch.html"><b>Launches</b></a>
+        <a href="about_us.html"><b>About Us</b></a>
+        <a href="reach_us.html"><b>Reach Us</b></a>
+    </div>
+
+    <div class="container">
+        <img src="SpaceZ-white.png">
+        <h2 id="btn-form">Send a form</h2>
+        <h1>Through email:</h1>
+        <a href="mailto:ziyang0715@1utar.my"><img src="reach_us_email_logo.png" width="150" height="105"></a>
+    </div>
+
+    <div class="form-container">
+        <div class="form">
+            <form id="submitForm">
+                <h2>A form to reach us:</h2>
+                <div class="form-group mt-4">
+                    <label for="fullName">Enter your name:</label>
+                    <input type="text" id="fullName" class="form-control" required>
+                </div>
+                <div class="form-group mt-4">
+                    <label for="email">Enter your email address:</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="mt-4">
+                    <label for="type">Select a subject:</label>
+                    <select class="form-control" id="type">
+                        <option>Business enquiry</option>
+                        <option>Product enquiry</option>
+                        <option>Service enquiry</option>
+                        <option selected>Other</option>
+                    </select>
+                </div>
+                <div class="form-group mt-4" id="otherSubject" style="display: block;">
+                    <label for="subject">Enter a subject:</label>
+                    <input type="text" id="subject" class="form-control">
+                </div>
+                <div class="form-group mt-4">
+                    <label for="contentForm">Content:</label>
+                    <textarea id="contentForm" class="form-control" style="resize: none;" rows="3" required></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit"
+                    style="width: 120px; position: relative;">Submit</button>
+                <button class="btn btn-secondary" id="closeBtn" type="button"
+                    style="width: 120px; position:relative; margin-left: 30px;">Close</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+    <script>
+
+        document.getElementById("type").addEventListener("change", function () {
+
+            if (document.getElementById("type").value == "Other") {
+                document.getElementById("otherSubject").style.display = "block";
+                document.getElementById("subject").setAttribute("required", "");
+            }
+            else {
+                document.getElementById("otherSubject").style.display = "none";
+                document.getElementById("subject").removeAttribute("required");
+            }
+
+        })
+
+        document.getElementById("submitForm").addEventListener("submit", function(event){
+            event.preventDefault();
+            document.querySelector(".form-container").style.display = "none";
+            alert("Your form has been successfully submitted.");
+            document.getElementById("type").value = "Other"
+            document.getElementById("subject").value = ""
+            document.getElementById("fullName").value = ""
+            document.getElementById("email").value = ""
+            document.getElementById("contentForm").value = ""
+        })
+
+        document.getElementById("btn-form").addEventListener("click", function(){
+            document.querySelector(".form-container").style.display = "block";
+
+        })
+
+        document.getElementById("closeBtn").addEventListener("click", function(){
+            document.querySelector(".form-container").style.display = "none";
+        })
+
+    </script>
+</body>
+
+</html>

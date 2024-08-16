@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SpaceZ - Rewatch</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        a{
+            position: relative;
+            color: white;
+            text-decoration: none;
+            border: 1px white solid;
+            padding: 10px;
+            top: 20px;
+            transition: 0.5s ease-in;
+        }
+
+        a:hover{
+            background-color: grey;
+        }
+
+        img{
+            position: relative;
+        }
+
+        .video_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html">BACK TO HOME</a>
+    <div class="video_container">
+        <video width="1280" height="720" controls>
+            <source src="starlink.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <img src="SpaceZ-white.png" width="180" height="40">
+</body>
+
+</html>
