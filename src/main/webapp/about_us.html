@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SpaceZ - Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 0;
+            background-image: url(about_us_background.jpg);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .nav-container {
+            margin: auto;
+            text-align: center;
+            position: fixed;
+            top: 3vh;
+            border-radius: 200px;
+            width: fit-content;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: rgba(255, 255, 255, 0.5);
+            animation: fade-in 2s ease;
+        }
+
+        @keyframes fade-in {
+            from {
+                transform: translateY(-150%);
+            }
+
+            to {
+                transform: translateY(0%);
+            }
+        }
+
+        a {
+            text-decoration: none;
+            padding-right: 50px;
+            font-size: 180%;
+            color: rgb(0, 0, 0);
+            font-family: serif;
+            transition: font-size 1s;
+        }
+
+        a:hover {
+            color: black;
+            font-size: 240%;
+            text-shadow: 0px 0px 10px white;
+        }
+
+        .container {
+            max-width: 100%;
+            height: 100vh;
+        }
+
+        .row {
+            height: 99.9vh;
+        }
+
+        #col1,
+        #col2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        #col2>p {
+            border-radius: 20px;
+            font-size: 30px;
+            color: white;
+            animation: appear 3s ease forwards;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+                background-color: rgba(0, 0, 0, 0.0);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+                background-color: rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        #col1>img {
+            animation: show 3s ease forwards;
+            width: 30vw;
+        }
+
+        @keyframes show {
+            from {
+                opacity: 0;
+                transform: translateX(-200%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="nav-container">
+        <a href="index.html"><img src="SpaceZ-Logo.png" width="200" height="50"></a>
+        <a href="index.html"><b>Home</b></a>
+        <a href="launch.html"><b>Launches</b></a>
+        <a href="about_us.html"><b>About Us</b></a>
+        <a href="reach_us.html"><b>Reach Us</b></a>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-4" id="col1">
+                <img src="SpaceZ-white.png">
+            </div>
+            <div class="col-8" id="col2">
+                <p>We are a spacecraft company that manufactures and sells advanced space vehicles while providing
+                    reliable rocket launch services. We prioritize affordability and accessibility, enabling customers
+                    to explore new opportunities in space. With a dedicated team of engineers and scientists, we push
+                    the boundaries of space technology for safe and innovative missions.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>
